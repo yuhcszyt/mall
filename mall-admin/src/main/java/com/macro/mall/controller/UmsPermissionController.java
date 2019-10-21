@@ -1,6 +1,6 @@
 package com.macro.mall.controller;
 
-import com.macro.mall.common.api.CommonResult;
+import com.macro.mall.dto.CommonResult;
 import com.macro.mall.dto.UmsPermissionNode;
 import com.macro.mall.model.UmsPermission;
 import com.macro.mall.service.UmsPermissionService;
@@ -25,49 +25,49 @@ public class UmsPermissionController {
     @ApiOperation("添加权限")
     @RequestMapping(value = "/create", method = RequestMethod.POST)
     @ResponseBody
-    public CommonResult create(@RequestBody UmsPermission permission) {
+    public Object create(@RequestBody UmsPermission permission) {
         int count = permissionService.create(permission);
         if(count>0){
-            return CommonResult.success(count);
+            return new CommonResult().success(count);
         }
-        return CommonResult.failed();
+        return new CommonResult().failed();
     }
 
     @ApiOperation("修改权限")
     @RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
     @ResponseBody
-    public CommonResult update(@PathVariable Long id, @RequestBody UmsPermission permission) {
+    public Object update(@PathVariable Long id, @RequestBody UmsPermission permission) {
         int count = permissionService.update(id,permission);
         if(count>0){
-            return CommonResult.success(count);
+            return new CommonResult().success(count);
         }
-        return CommonResult.failed();
+        return new CommonResult().failed();
     }
 
     @ApiOperation("根据id批量删除权限")
     @RequestMapping(value = "/delete", method = RequestMethod.POST)
     @ResponseBody
-    public CommonResult delete(@RequestParam("ids") List<Long> ids) {
+    public Object delete(@RequestParam("ids") List<Long> ids) {
         int count = permissionService.delete(ids);
         if(count>0){
-            return CommonResult.success(count);
+            return new CommonResult().success(count);
         }
-        return CommonResult.failed();
+        return new CommonResult().failed();
     }
 
     @ApiOperation("以层级结构返回所有权限")
     @RequestMapping(value = "/treeList", method = RequestMethod.GET)
     @ResponseBody
-    public CommonResult<List<UmsPermissionNode>> treeList() {
+    public Object treeList() {
         List<UmsPermissionNode> permissionNodeList = permissionService.treeList();
-        return CommonResult.success(permissionNodeList);
+        return new CommonResult().success(permissionNodeList);
     }
 
     @ApiOperation("获取所有权限列表")
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     @ResponseBody
-    public CommonResult<List<UmsPermission>> list() {
+    public Object list() {
         List<UmsPermission> permissionList = permissionService.list();
-        return CommonResult.success(permissionList);
+        return new CommonResult().success(permissionList);
     }
 }

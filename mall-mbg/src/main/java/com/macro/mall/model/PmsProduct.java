@@ -1,6 +1,5 @@
 package com.macro.mall.model;
 
-import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
@@ -20,104 +19,224 @@ public class PmsProduct implements Serializable {
 
     private String pic;
 
-    @ApiModelProperty(value = "货号")
+    /**
+     * 货号
+     *
+     * @mbggenerated
+     */
     private String productSn;
 
-    @ApiModelProperty(value = "删除状态：0->未删除；1->已删除")
+    /**
+     * 删除状态：0->未删除；1->已删除
+     *
+     * @mbggenerated
+     */
     private Integer deleteStatus;
 
-    @ApiModelProperty(value = "上架状态：0->下架；1->上架")
+    /**
+     * 上架状态：0->下架；1->上架
+     *
+     * @mbggenerated
+     */
     private Integer publishStatus;
 
-    @ApiModelProperty(value = "新品状态:0->不是新品；1->新品")
+    /**
+     * 新品状态:0->不是新品；1->新品
+     *
+     * @mbggenerated
+     */
     private Integer newStatus;
 
-    @ApiModelProperty(value = "推荐状态；0->不推荐；1->推荐")
+    /**
+     * 推荐状态；0->不推荐；1->推荐
+     *
+     * @mbggenerated
+     */
     private Integer recommandStatus;
 
-    @ApiModelProperty(value = "审核状态：0->未审核；1->审核通过")
+    /**
+     * 审核状态：0->未审核；1->审核通过
+     *
+     * @mbggenerated
+     */
     private Integer verifyStatus;
 
-    @ApiModelProperty(value = "排序")
+    /**
+     * 排序
+     *
+     * @mbggenerated
+     */
     private Integer sort;
 
-    @ApiModelProperty(value = "销量")
+    /**
+     * 销量
+     *
+     * @mbggenerated
+     */
     private Integer sale;
 
     private BigDecimal price;
 
-    @ApiModelProperty(value = "促销价格")
+    /**
+     * 促销价格
+     *
+     * @mbggenerated
+     */
     private BigDecimal promotionPrice;
 
-    @ApiModelProperty(value = "赠送的成长值")
+    /**
+     * 赠送的成长值
+     *
+     * @mbggenerated
+     */
     private Integer giftGrowth;
 
-    @ApiModelProperty(value = "赠送的积分")
+    /**
+     * 赠送的积分
+     *
+     * @mbggenerated
+     */
     private Integer giftPoint;
 
-    @ApiModelProperty(value = "限制使用的积分数")
+    /**
+     * 限制使用的积分数
+     *
+     * @mbggenerated
+     */
     private Integer usePointLimit;
 
-    @ApiModelProperty(value = "副标题")
+    /**
+     * 副标题
+     *
+     * @mbggenerated
+     */
     private String subTitle;
 
-    @ApiModelProperty(value = "市场价")
+    /**
+     * 市场价
+     *
+     * @mbggenerated
+     */
     private BigDecimal originalPrice;
 
-    @ApiModelProperty(value = "库存")
+    /**
+     * 库存
+     *
+     * @mbggenerated
+     */
     private Integer stock;
 
-    @ApiModelProperty(value = "库存预警值")
+    /**
+     * 库存预警值
+     *
+     * @mbggenerated
+     */
     private Integer lowStock;
 
-    @ApiModelProperty(value = "单位")
+    /**
+     * 单位
+     *
+     * @mbggenerated
+     */
     private String unit;
 
-    @ApiModelProperty(value = "商品重量，默认为克")
+    /**
+     * 商品重量，默认为克
+     *
+     * @mbggenerated
+     */
     private BigDecimal weight;
 
-    @ApiModelProperty(value = "是否为预告商品：0->不是；1->是")
+    /**
+     * 是否为预告商品：0->不是；1->是
+     *
+     * @mbggenerated
+     */
     private Integer previewStatus;
 
-    @ApiModelProperty(value = "以逗号分割的产品服务：1->无忧退货；2->快速退款；3->免费包邮")
+    /**
+     * 以逗号分割的产品服务：1->无忧退货；2->快速退款；3->免费包邮
+     *
+     * @mbggenerated
+     */
     private String serviceIds;
 
     private String keywords;
 
     private String note;
 
-    @ApiModelProperty(value = "画册图片，连产品图片限制为5张，以逗号分割")
+    /**
+     * 画册图片，连产品图片限制为5张，以逗号分割
+     *
+     * @mbggenerated
+     */
     private String albumPics;
 
     private String detailTitle;
 
-    @ApiModelProperty(value = "促销开始时间")
+    /**
+     * 促销开始时间
+     *
+     * @mbggenerated
+     */
     private Date promotionStartTime;
 
-    @ApiModelProperty(value = "促销结束时间")
+    /**
+     * 促销结束时间
+     *
+     * @mbggenerated
+     */
     private Date promotionEndTime;
 
-    @ApiModelProperty(value = "活动限购数量")
+    /**
+     * 活动限购数量
+     *
+     * @mbggenerated
+     */
     private Integer promotionPerLimit;
 
-    @ApiModelProperty(value = "促销类型：0->没有促销使用原价;1->使用促销价；2->使用会员价；3->使用阶梯价格；4->使用满减价格；5->限时购")
+    /**
+     * 促销类型：0->没有促销使用原价;1->使用促销价；2->使用会员价；3->使用阶梯价格；4->使用满减价格；5->限时购
+     *
+     * @mbggenerated
+     */
     private Integer promotionType;
 
-    @ApiModelProperty(value = "品牌名称")
+    /**
+     * 品牌名称
+     *
+     * @mbggenerated
+     */
     private String brandName;
 
-    @ApiModelProperty(value = "商品分类名称")
+    /**
+     * 商品分类名称
+     *
+     * @mbggenerated
+     */
     private String productCategoryName;
 
-    @ApiModelProperty(value = "商品描述")
+    /**
+     * 商品描述
+     *
+     * @mbggenerated
+     */
     private String description;
 
     private String detailDesc;
 
-    @ApiModelProperty(value = "产品详情网页内容")
+    /**
+     * 产品详情网页内容
+     *
+     * @mbggenerated
+     */
     private String detailHtml;
 
-    @ApiModelProperty(value = "移动端网页详情")
+    /**
+     * 移动端网页详情
+     *
+     * @mbggenerated
+     */
     private String detailMobileHtml;
 
     private static final long serialVersionUID = 1L;

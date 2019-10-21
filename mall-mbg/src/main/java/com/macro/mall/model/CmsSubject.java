@@ -1,6 +1,5 @@
 package com.macro.mall.model;
 
-import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -11,10 +10,18 @@ public class CmsSubject implements Serializable {
 
     private String title;
 
-    @ApiModelProperty(value = "专题主图")
+    /**
+     * 专题主图
+     *
+     * @mbggenerated
+     */
     private String pic;
 
-    @ApiModelProperty(value = "关联产品数量")
+    /**
+     * 关联产品数量
+     *
+     * @mbggenerated
+     */
     private Integer productCount;
 
     private Integer recommendStatus;
@@ -27,18 +34,34 @@ public class CmsSubject implements Serializable {
 
     private Integer commentCount;
 
-    @ApiModelProperty(value = "画册图片用逗号分割")
+    /**
+     * 画册图片用逗号分割
+     *
+     * @mbggenerated
+     */
     private String albumPics;
 
     private String description;
 
-    @ApiModelProperty(value = "显示状态：0->不显示；1->显示")
+    /**
+     * 显示状态：0->不显示；1->显示
+     *
+     * @mbggenerated
+     */
     private Integer showStatus;
 
-    @ApiModelProperty(value = "转发数")
+    /**
+     * 转发数
+     *
+     * @mbggenerated
+     */
     private Integer forwardCount;
 
-    @ApiModelProperty(value = "专题分类名称")
+    /**
+     * 专题分类名称
+     *
+     * @mbggenerated
+     */
     private String categoryName;
 
     private String content;

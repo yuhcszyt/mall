@@ -1,6 +1,5 @@
 package com.macro.mall.model;
 
-import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
@@ -10,28 +9,60 @@ public class UmsMemberStatisticsInfo implements Serializable {
 
     private Long memberId;
 
-    @ApiModelProperty(value = "累计消费金额")
+    /**
+     * 累计消费金额
+     *
+     * @mbggenerated
+     */
     private BigDecimal consumeAmount;
 
-    @ApiModelProperty(value = "订单数量")
+    /**
+     * 订单数量
+     *
+     * @mbggenerated
+     */
     private Integer orderCount;
 
-    @ApiModelProperty(value = "优惠券数量")
+    /**
+     * 优惠券数量
+     *
+     * @mbggenerated
+     */
     private Integer couponCount;
 
-    @ApiModelProperty(value = "评价数")
+    /**
+     * 评价数
+     *
+     * @mbggenerated
+     */
     private Integer commentCount;
 
-    @ApiModelProperty(value = "退货数量")
+    /**
+     * 退货数量
+     *
+     * @mbggenerated
+     */
     private Integer returnOrderCount;
 
-    @ApiModelProperty(value = "登录次数")
+    /**
+     * 登录次数
+     *
+     * @mbggenerated
+     */
     private Integer loginCount;
 
-    @ApiModelProperty(value = "关注数量")
+    /**
+     * 关注数量
+     *
+     * @mbggenerated
+     */
     private Integer attendCount;
 
-    @ApiModelProperty(value = "粉丝数量")
+    /**
+     * 粉丝数量
+     *
+     * @mbggenerated
+     */
     private Integer fansCount;
 
     private Integer collectProductCount;
@@ -44,7 +75,11 @@ public class UmsMemberStatisticsInfo implements Serializable {
 
     private Integer inviteFriendCount;
 
-    @ApiModelProperty(value = "最后一次下订单时间")
+    /**
+     * 最后一次下订单时间
+     *
+     * @mbggenerated
+     */
     private Date recentOrderTime;
 
     private static final long serialVersionUID = 1L;

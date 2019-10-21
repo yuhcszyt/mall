@@ -1,6 +1,5 @@
 package com.macro.mall.model;
 
-import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -11,19 +10,39 @@ public class UmsIntegrationChangeHistory implements Serializable {
 
     private Date createTime;
 
-    @ApiModelProperty(value = "改变类型：0->增加；1->减少")
+    /**
+     * 改变类型：0->增加；1->减少
+     *
+     * @mbggenerated
+     */
     private Integer changeType;
 
-    @ApiModelProperty(value = "积分改变数量")
+    /**
+     * 积分改变数量
+     *
+     * @mbggenerated
+     */
     private Integer changeCount;
 
-    @ApiModelProperty(value = "操作人员")
+    /**
+     * 操作人员
+     *
+     * @mbggenerated
+     */
     private String operateMan;
 
-    @ApiModelProperty(value = "操作备注")
+    /**
+     * 操作备注
+     *
+     * @mbggenerated
+     */
     private String operateNote;
 
-    @ApiModelProperty(value = "积分来源：0->购物；1->管理员修改")
+    /**
+     * 积分来源：0->购物；1->管理员修改
+     *
+     * @mbggenerated
+     */
     private Integer sourceType;
 
     private static final long serialVersionUID = 1L;

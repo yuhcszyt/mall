@@ -1,6 +1,5 @@
 package com.macro.mall.model;
 
-import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
@@ -14,53 +13,113 @@ public class OmsCartItem implements Serializable {
 
     private Long memberId;
 
-    @ApiModelProperty(value = "购买数量")
+    /**
+     * 购买数量
+     *
+     * @mbggenerated
+     */
     private Integer quantity;
 
-    @ApiModelProperty(value = "添加到购物车的价格")
+    /**
+     * 添加到购物车的价格
+     *
+     * @mbggenerated
+     */
     private BigDecimal price;
 
-    @ApiModelProperty(value = "销售属性1")
+    /**
+     * 销售属性1
+     *
+     * @mbggenerated
+     */
     private String sp1;
 
-    @ApiModelProperty(value = "销售属性2")
+    /**
+     * 销售属性2
+     *
+     * @mbggenerated
+     */
     private String sp2;
 
-    @ApiModelProperty(value = "销售属性3")
+    /**
+     * 销售属性3
+     *
+     * @mbggenerated
+     */
     private String sp3;
 
-    @ApiModelProperty(value = "商品主图")
+    /**
+     * 商品主图
+     *
+     * @mbggenerated
+     */
     private String productPic;
 
-    @ApiModelProperty(value = "商品名称")
+    /**
+     * 商品名称
+     *
+     * @mbggenerated
+     */
     private String productName;
 
-    @ApiModelProperty(value = "商品副标题（卖点）")
+    /**
+     * 商品副标题（卖点）
+     *
+     * @mbggenerated
+     */
     private String productSubTitle;
 
-    @ApiModelProperty(value = "商品sku条码")
+    /**
+     * 商品sku条码
+     *
+     * @mbggenerated
+     */
     private String productSkuCode;
 
-    @ApiModelProperty(value = "会员昵称")
+    /**
+     * 会员昵称
+     *
+     * @mbggenerated
+     */
     private String memberNickname;
 
-    @ApiModelProperty(value = "创建时间")
+    /**
+     * 创建时间
+     *
+     * @mbggenerated
+     */
     private Date createDate;
 
-    @ApiModelProperty(value = "修改时间")
+    /**
+     * 修改时间
+     *
+     * @mbggenerated
+     */
     private Date modifyDate;
 
-    @ApiModelProperty(value = "是否删除")
+    /**
+     * 是否删除
+     *
+     * @mbggenerated
+     */
     private Integer deleteStatus;
 
-    @ApiModelProperty(value = "商品分类")
+    /**
+     * 商品分类
+     *
+     * @mbggenerated
+     */
     private Long productCategoryId;
 
     private String productBrand;
 
     private String productSn;
 
-    @ApiModelProperty(value = "商品销售属性:[{'key':'颜色','value':'颜色'},{'key':'容量','value':'4G'}]")
+    /**
+     * 商品销售属性:[{"key":"颜色","value":"颜色"},{"key":"容量","value":"4G"}]
+     *
+     * @mbggenerated
+     */
     private String productAttr;
 
     private static final long serialVersionUID = 1L;

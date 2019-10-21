@@ -1,6 +1,5 @@
 package com.macro.mall.model;
 
-import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
 
 public class UmsMemberReceiveAddress implements Serializable {
@@ -8,27 +7,55 @@ public class UmsMemberReceiveAddress implements Serializable {
 
     private Long memberId;
 
-    @ApiModelProperty(value = "收货人名称")
+    /**
+     * 收货人名称
+     *
+     * @mbggenerated
+     */
     private String name;
 
     private String phoneNumber;
 
-    @ApiModelProperty(value = "是否为默认")
+    /**
+     * 是否为默认
+     *
+     * @mbggenerated
+     */
     private Integer defaultStatus;
 
-    @ApiModelProperty(value = "邮政编码")
+    /**
+     * 邮政编码
+     *
+     * @mbggenerated
+     */
     private String postCode;
 
-    @ApiModelProperty(value = "省份/直辖市")
+    /**
+     * 省份/直辖市
+     *
+     * @mbggenerated
+     */
     private String province;
 
-    @ApiModelProperty(value = "城市")
+    /**
+     * 城市
+     *
+     * @mbggenerated
+     */
     private String city;
 
-    @ApiModelProperty(value = "区")
+    /**
+     * 区
+     *
+     * @mbggenerated
+     */
     private String region;
 
-    @ApiModelProperty(value = "详细地址(街道)")
+    /**
+     * 详细地址(街道)
+     *
+     * @mbggenerated
+     */
     private String detailAddress;
 
     private static final long serialVersionUID = 1L;

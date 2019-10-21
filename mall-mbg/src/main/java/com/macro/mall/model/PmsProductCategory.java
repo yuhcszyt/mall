@@ -1,37 +1,60 @@
 package com.macro.mall.model;
 
-import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
 
 public class PmsProductCategory implements Serializable {
     private Long id;
 
-    @ApiModelProperty(value = "上机分类的编号：0表示一级分类")
+    /**
+     * 上机分类的编号：0表示一级分类
+     *
+     * @mbggenerated
+     */
     private Long parentId;
 
     private String name;
 
-    @ApiModelProperty(value = "分类级别：0->1级；1->2级")
+    /**
+     * 分类级别：0->1级；1->2级
+     *
+     * @mbggenerated
+     */
     private Integer level;
 
     private Integer productCount;
 
     private String productUnit;
 
-    @ApiModelProperty(value = "是否显示在导航栏：0->不显示；1->显示")
+    /**
+     * 是否显示在导航栏：0->不显示；1->显示
+     *
+     * @mbggenerated
+     */
     private Integer navStatus;
 
-    @ApiModelProperty(value = "显示状态：0->不显示；1->显示")
+    /**
+     * 显示状态：0->不显示；1->显示
+     *
+     * @mbggenerated
+     */
     private Integer showStatus;
 
     private Integer sort;
 
-    @ApiModelProperty(value = "图标")
+    /**
+     * 图标
+     *
+     * @mbggenerated
+     */
     private String icon;
 
     private String keywords;
 
-    @ApiModelProperty(value = "描述")
+    /**
+     * 描述
+     *
+     * @mbggenerated
+     */
     private String description;
 
     private static final long serialVersionUID = 1L;

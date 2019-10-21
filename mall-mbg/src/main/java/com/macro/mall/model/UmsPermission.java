@@ -1,37 +1,72 @@
 package com.macro.mall.model;
 
-import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
 import java.util.Date;
 
 public class UmsPermission implements Serializable {
     private Long id;
 
-    @ApiModelProperty(value = "父级权限id")
+    /**
+     * 父级权限id
+     *
+     * @mbggenerated
+     */
     private Long pid;
 
-    @ApiModelProperty(value = "名称")
+    /**
+     * 名称
+     *
+     * @mbggenerated
+     */
     private String name;
 
-    @ApiModelProperty(value = "权限值")
+    /**
+     * 权限值
+     *
+     * @mbggenerated
+     */
     private String value;
 
-    @ApiModelProperty(value = "图标")
+    /**
+     * 图标
+     *
+     * @mbggenerated
+     */
     private String icon;
 
-    @ApiModelProperty(value = "权限类型：0->目录；1->菜单；2->按钮（接口绑定权限）")
+    /**
+     * 权限类型：0->目录；1->菜单；2->按钮（接口绑定权限）
+     *
+     * @mbggenerated
+     */
     private Integer type;
 
-    @ApiModelProperty(value = "前端资源路径")
+    /**
+     * 前端资源路径
+     *
+     * @mbggenerated
+     */
     private String uri;
 
-    @ApiModelProperty(value = "启用状态；0->禁用；1->启用")
+    /**
+     * 启用状态；0->禁用；1->启用
+     *
+     * @mbggenerated
+     */
     private Integer status;
 
-    @ApiModelProperty(value = "创建时间")
+    /**
+     * 创建时间
+     *
+     * @mbggenerated
+     */
     private Date createTime;
 
-    @ApiModelProperty(value = "排序")
+    /**
+     * 排序
+     *
+     * @mbggenerated
+     */
     private Integer sort;
 
     private static final long serialVersionUID = 1L;

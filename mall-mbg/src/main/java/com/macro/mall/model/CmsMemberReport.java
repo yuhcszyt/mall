@@ -1,26 +1,41 @@
 package com.macro.mall.model;
 
-import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
 import java.util.Date;
 
 public class CmsMemberReport implements Serializable {
     private Long id;
 
-    @ApiModelProperty(value = "举报类型：0->商品评价；1->话题内容；2->用户评论")
+    /**
+     * 举报类型：0->商品评价；1->话题内容；2->用户评论
+     *
+     * @mbggenerated
+     */
     private Integer reportType;
 
-    @ApiModelProperty(value = "举报人")
+    /**
+     * 举报人
+     *
+     * @mbggenerated
+     */
     private String reportMemberName;
 
     private Date createTime;
 
     private String reportObject;
 
-    @ApiModelProperty(value = "举报状态：0->未处理；1->已处理")
+    /**
+     * 举报状态：0->未处理；1->已处理
+     *
+     * @mbggenerated
+     */
     private Integer reportStatus;
 
-    @ApiModelProperty(value = "处理结果：0->无效；1->有效；2->恶意")
+    /**
+     * 处理结果：0->无效；1->有效；2->恶意
+     *
+     * @mbggenerated
+     */
     private Integer handleStatus;
 
     private String note;

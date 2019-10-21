@@ -1,6 +1,5 @@
 package com.macro.mall.model;
 
-import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -9,16 +8,32 @@ public class SmsFlashPromotion implements Serializable {
 
     private String title;
 
-    @ApiModelProperty(value = "开始日期")
+    /**
+     * 开始日期
+     *
+     * @mbggenerated
+     */
     private Date startDate;
 
-    @ApiModelProperty(value = "结束日期")
+    /**
+     * 结束日期
+     *
+     * @mbggenerated
+     */
     private Date endDate;
 
-    @ApiModelProperty(value = "上下线状态")
+    /**
+     * 上下线状态
+     *
+     * @mbggenerated
+     */
     private Integer status;
 
-    @ApiModelProperty(value = "秒杀时间段名称")
+    /**
+     * 秒杀时间段名称
+     *
+     * @mbggenerated
+     */
     private Date createTime;
 
     private static final long serialVersionUID = 1L;

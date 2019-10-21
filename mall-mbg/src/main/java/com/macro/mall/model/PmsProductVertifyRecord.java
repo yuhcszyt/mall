@@ -1,6 +1,5 @@
 package com.macro.mall.model;
 
-import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -11,12 +10,20 @@ public class PmsProductVertifyRecord implements Serializable {
 
     private Date createTime;
 
-    @ApiModelProperty(value = "审核人")
+    /**
+     * 审核人
+     *
+     * @mbggenerated
+     */
     private String vertifyMan;
 
     private Integer status;
 
-    @ApiModelProperty(value = "反馈详情")
+    /**
+     * 反馈详情
+     *
+     * @mbggenerated
+     */
     private String detail;
 
     private static final long serialVersionUID = 1L;

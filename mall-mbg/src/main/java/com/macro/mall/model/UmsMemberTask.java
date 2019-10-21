@@ -1,6 +1,5 @@
 package com.macro.mall.model;
 
-import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
 
 public class UmsMemberTask implements Serializable {
@@ -8,13 +7,25 @@ public class UmsMemberTask implements Serializable {
 
     private String name;
 
-    @ApiModelProperty(value = "赠送成长值")
+    /**
+     * 赠送成长值
+     *
+     * @mbggenerated
+     */
     private Integer growth;
 
-    @ApiModelProperty(value = "赠送积分")
+    /**
+     * 赠送积分
+     *
+     * @mbggenerated
+     */
     private Integer intergration;
 
-    @ApiModelProperty(value = "任务类型：0->新手任务；1->日常任务")
+    /**
+     * 任务类型：0->新手任务；1->日常任务
+     *
+     * @mbggenerated
+     */
     private Integer type;
 
     private static final long serialVersionUID = 1L;

@@ -1,6 +1,5 @@
 package com.macro.mall.model;
 
-import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -9,55 +8,123 @@ public class UmsMember implements Serializable {
 
     private Long memberLevelId;
 
-    @ApiModelProperty(value = "用户名")
+    /**
+     * 用户名
+     *
+     * @mbggenerated
+     */
     private String username;
 
-    @ApiModelProperty(value = "密码")
+    /**
+     * 密码
+     *
+     * @mbggenerated
+     */
     private String password;
 
-    @ApiModelProperty(value = "昵称")
+    /**
+     * 昵称
+     *
+     * @mbggenerated
+     */
     private String nickname;
 
-    @ApiModelProperty(value = "手机号码")
+    /**
+     * 手机号码
+     *
+     * @mbggenerated
+     */
     private String phone;
 
-    @ApiModelProperty(value = "帐号启用状态:0->禁用；1->启用")
+    /**
+     * 帐号启用状态:0->禁用；1->启用
+     *
+     * @mbggenerated
+     */
     private Integer status;
 
-    @ApiModelProperty(value = "注册时间")
+    /**
+     * 注册时间
+     *
+     * @mbggenerated
+     */
     private Date createTime;
 
-    @ApiModelProperty(value = "头像")
+    /**
+     * 头像
+     *
+     * @mbggenerated
+     */
     private String icon;
 
-    @ApiModelProperty(value = "性别：0->未知；1->男；2->女")
+    /**
+     * 性别：0->未知；1->男；2->女
+     *
+     * @mbggenerated
+     */
     private Integer gender;
 
-    @ApiModelProperty(value = "生日")
+    /**
+     * 生日
+     *
+     * @mbggenerated
+     */
     private Date birthday;
 
-    @ApiModelProperty(value = "所做城市")
+    /**
+     * 所做城市
+     *
+     * @mbggenerated
+     */
     private String city;
 
-    @ApiModelProperty(value = "职业")
+    /**
+     * 职业
+     *
+     * @mbggenerated
+     */
     private String job;
 
-    @ApiModelProperty(value = "个性签名")
+    /**
+     * 个性签名
+     *
+     * @mbggenerated
+     */
     private String personalizedSignature;
 
-    @ApiModelProperty(value = "用户来源")
+    /**
+     * 用户来源
+     *
+     * @mbggenerated
+     */
     private Integer sourceType;
 
-    @ApiModelProperty(value = "积分")
+    /**
+     * 积分
+     *
+     * @mbggenerated
+     */
     private Integer integration;
 
-    @ApiModelProperty(value = "成长值")
+    /**
+     * 成长值
+     *
+     * @mbggenerated
+     */
     private Integer growth;
 
-    @ApiModelProperty(value = "剩余抽奖次数")
+    /**
+     * 剩余抽奖次数
+     *
+     * @mbggenerated
+     */
     private Integer luckeyCount;
 
-    @ApiModelProperty(value = "历史积分数量")
+    /**
+     * 历史积分数量
+     *
+     * @mbggenerated
+     */
     private Integer historyIntegration;
 
     private static final long serialVersionUID = 1L;

@@ -1,7 +1,6 @@
 package com.macro.mall.controller;
 
-import com.macro.mall.common.api.CommonPage;
-import com.macro.mall.common.api.CommonResult;
+import com.macro.mall.dto.CommonResult;
 import com.macro.mall.dto.PmsProductCategoryParam;
 import com.macro.mall.dto.PmsProductCategoryWithChildrenItem;
 import com.macro.mall.model.PmsProductCategory;
@@ -32,13 +31,13 @@ public class PmsProductCategoryController {
     @RequestMapping(value = "/create", method = RequestMethod.POST)
     @ResponseBody
     @PreAuthorize("hasAuthority('pms:productCategory:create')")
-    public CommonResult create(@Validated @RequestBody PmsProductCategoryParam productCategoryParam,
+    public Object create(@Validated @RequestBody PmsProductCategoryParam productCategoryParam,
                          BindingResult result) {
         int count = productCategoryService.create(productCategoryParam);
         if (count > 0) {
-            return CommonResult.success(count);
+            return new CommonResult().success(count);
         } else {
-            return CommonResult.failed();
+            return new CommonResult().failed();
         }
     }
 
@@ -46,15 +45,15 @@ public class PmsProductCategoryController {
     @RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
     @ResponseBody
     @PreAuthorize("hasAuthority('pms:productCategory:update')")
-    public CommonResult update(@PathVariable Long id,
+    public Object update(@PathVariable Long id,
                          @Validated
                          @RequestBody PmsProductCategoryParam productCategoryParam,
                          BindingResult result) {
         int count = productCategoryService.update(id, productCategoryParam);
         if (count > 0) {
-            return CommonResult.success(count);
+            return new CommonResult().success(count);
         } else {
-            return CommonResult.failed();
+            return new CommonResult().failed();
         }
     }
 
@@ -62,32 +61,32 @@ public class PmsProductCategoryController {
     @RequestMapping(value = "/list/{parentId}", method = RequestMethod.GET)
     @ResponseBody
     @PreAuthorize("hasAuthority('pms:productCategory:read')")
-    public CommonResult<CommonPage<PmsProductCategory>> getList(@PathVariable Long parentId,
-                                                                @RequestParam(value = "pageSize", defaultValue = "5") Integer pageSize,
-                                                                @RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum) {
+    public Object getList(@PathVariable Long parentId,
+                          @RequestParam(value = "pageSize", defaultValue = "5") Integer pageSize,
+                          @RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum) {
         List<PmsProductCategory> productCategoryList = productCategoryService.getList(parentId, pageSize, pageNum);
-        return CommonResult.success(CommonPage.restPage(productCategoryList));
+        return new CommonResult().pageSuccess(productCategoryList);
     }
 
     @ApiOperation("根据id获取商品分类")
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     @ResponseBody
     @PreAuthorize("hasAuthority('pms:productCategory:read')")
-    public CommonResult<PmsProductCategory> getItem(@PathVariable Long id) {
+    public Object getItem(@PathVariable Long id) {
         PmsProductCategory productCategory = productCategoryService.getItem(id);
-        return CommonResult.success(productCategory);
+        return new CommonResult().success(productCategory);
     }
 
     @ApiOperation("删除商品分类")
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.POST)
     @ResponseBody
     @PreAuthorize("hasAuthority('pms:productCategory:delete')")
-    public CommonResult delete(@PathVariable Long id) {
+    public Object delete(@PathVariable Long id) {
         int count = productCategoryService.delete(id);
         if (count > 0) {
-            return CommonResult.success(count);
+            return new CommonResult().success(count);
         } else {
-            return CommonResult.failed();
+            return new CommonResult().failed();
         }
     }
 
@@ -95,12 +94,12 @@ public class PmsProductCategoryController {
     @RequestMapping(value = "/update/navStatus", method = RequestMethod.POST)
     @ResponseBody
     @PreAuthorize("hasAuthority('pms:productCategory:update')")
-    public CommonResult updateNavStatus(@RequestParam("ids") List<Long> ids, @RequestParam("navStatus") Integer navStatus) {
+    public Object updateNavStatus(@RequestParam("ids") List<Long> ids, @RequestParam("navStatus") Integer navStatus) {
         int count = productCategoryService.updateNavStatus(ids, navStatus);
         if (count > 0) {
-            return CommonResult.success(count);
+            return new CommonResult().success(count);
         } else {
-            return CommonResult.failed();
+            return new CommonResult().failed();
         }
     }
 
@@ -108,12 +107,12 @@ public class PmsProductCategoryController {
     @RequestMapping(value = "/update/showStatus", method = RequestMethod.POST)
     @ResponseBody
     @PreAuthorize("hasAuthority('pms:productCategory:update')")
-    public CommonResult updateShowStatus(@RequestParam("ids") List<Long> ids, @RequestParam("showStatus") Integer showStatus) {
+    public Object updateShowStatus(@RequestParam("ids") List<Long> ids, @RequestParam("showStatus") Integer showStatus) {
         int count = productCategoryService.updateShowStatus(ids, showStatus);
         if (count > 0) {
-            return CommonResult.success(count);
+            return new CommonResult().success(count);
         } else {
-            return CommonResult.failed();
+            return new CommonResult().failed();
         }
     }
 
@@ -121,8 +120,8 @@ public class PmsProductCategoryController {
     @RequestMapping(value = "/list/withChildren", method = RequestMethod.GET)
     @ResponseBody
     @PreAuthorize("hasAuthority('pms:productCategory:read')")
-    public CommonResult<List<PmsProductCategoryWithChildrenItem>> listWithChildren() {
+    public Object listWithChildren() {
         List<PmsProductCategoryWithChildrenItem> list = productCategoryService.listWithChildren();
-        return CommonResult.success(list);
+        return new CommonResult().success(list);
     }
 }

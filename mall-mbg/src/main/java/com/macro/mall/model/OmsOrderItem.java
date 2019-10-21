@@ -1,16 +1,23 @@
 package com.macro.mall.model;
 
-import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
 public class OmsOrderItem implements Serializable {
     private Long id;
 
-    @ApiModelProperty(value = "订单id")
+    /**
+     * 订单id
+     *
+     * @mbggenerated
+     */
     private Long orderId;
 
-    @ApiModelProperty(value = "订单编号")
+    /**
+     * 订单编号
+     *
+     * @mbggenerated
+     */
     private String orderSn;
 
     private Long productId;
@@ -23,48 +30,96 @@ public class OmsOrderItem implements Serializable {
 
     private String productSn;
 
-    @ApiModelProperty(value = "销售价格")
+    /**
+     * 销售价格
+     *
+     * @mbggenerated
+     */
     private BigDecimal productPrice;
 
-    @ApiModelProperty(value = "购买数量")
+    /**
+     * 购买数量
+     *
+     * @mbggenerated
+     */
     private Integer productQuantity;
 
-    @ApiModelProperty(value = "商品sku编号")
+    /**
+     * 商品sku编号
+     *
+     * @mbggenerated
+     */
     private Long productSkuId;
 
-    @ApiModelProperty(value = "商品sku条码")
+    /**
+     * 商品sku条码
+     *
+     * @mbggenerated
+     */
     private String productSkuCode;
 
-    @ApiModelProperty(value = "商品分类id")
+    /**
+     * 商品分类id
+     *
+     * @mbggenerated
+     */
     private Long productCategoryId;
 
-    @ApiModelProperty(value = "商品的销售属性")
+    /**
+     * 商品的销售属性
+     *
+     * @mbggenerated
+     */
     private String sp1;
 
     private String sp2;
 
     private String sp3;
 
-    @ApiModelProperty(value = "商品促销名称")
+    /**
+     * 商品促销名称
+     *
+     * @mbggenerated
+     */
     private String promotionName;
 
-    @ApiModelProperty(value = "商品促销分解金额")
+    /**
+     * 商品促销分解金额
+     *
+     * @mbggenerated
+     */
     private BigDecimal promotionAmount;
 
-    @ApiModelProperty(value = "优惠券优惠分解金额")
+    /**
+     * 优惠券优惠分解金额
+     *
+     * @mbggenerated
+     */
     private BigDecimal couponAmount;
 
-    @ApiModelProperty(value = "积分优惠分解金额")
+    /**
+     * 积分优惠分解金额
+     *
+     * @mbggenerated
+     */
     private BigDecimal integrationAmount;
 
-    @ApiModelProperty(value = "该商品经过优惠后的分解金额")
+    /**
+     * 该商品经过优惠后的分解金额
+     *
+     * @mbggenerated
+     */
     private BigDecimal realAmount;
 
     private Integer giftIntegration;
 
     private Integer giftGrowth;
 
-    @ApiModelProperty(value = "商品销售属性:[{'key':'颜色','value':'颜色'},{'key':'容量','value':'4G'}]")
+    /**
+     * 商品销售属性:[{"key":"颜色","value":"颜色"},{"key":"容量","value":"4G"}]
+     *
+     * @mbggenerated
+     */
     private String productAttr;
 
     private static final long serialVersionUID = 1L;

@@ -1,26 +1,49 @@
 package com.macro.mall.model;
 
-import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
 import java.util.Date;
 
 public class SmsFlashPromotionSession implements Serializable {
-    @ApiModelProperty(value = "编号")
+    /**
+     * 编号
+     *
+     * @mbggenerated
+     */
     private Long id;
 
-    @ApiModelProperty(value = "场次名称")
+    /**
+     * 场次名称
+     *
+     * @mbggenerated
+     */
     private String name;
 
-    @ApiModelProperty(value = "每日开始时间")
+    /**
+     * 每日开始时间
+     *
+     * @mbggenerated
+     */
     private Date startTime;
 
-    @ApiModelProperty(value = "每日结束时间")
+    /**
+     * 每日结束时间
+     *
+     * @mbggenerated
+     */
     private Date endTime;
 
-    @ApiModelProperty(value = "启用状态：0->不启用；1->启用")
+    /**
+     * 启用状态：0->不启用；1->启用
+     *
+     * @mbggenerated
+     */
     private Integer status;
 
-    @ApiModelProperty(value = "创建时间")
+    /**
+     * 创建时间
+     *
+     * @mbggenerated
+     */
     private Date createTime;
 
     private static final long serialVersionUID = 1L;

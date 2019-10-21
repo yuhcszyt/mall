@@ -1,36 +1,71 @@
 package com.macro.mall.model;
 
-import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
 
 public class OmsCompanyAddress implements Serializable {
     private Long id;
 
-    @ApiModelProperty(value = "地址名称")
+    /**
+     * 地址名称
+     *
+     * @mbggenerated
+     */
     private String addressName;
 
-    @ApiModelProperty(value = "默认发货地址：0->否；1->是")
+    /**
+     * 默认发货地址：0->否；1->是
+     *
+     * @mbggenerated
+     */
     private Integer sendStatus;
 
-    @ApiModelProperty(value = "是否默认收货地址：0->否；1->是")
+    /**
+     * 是否默认收货地址：0->否；1->是
+     *
+     * @mbggenerated
+     */
     private Integer receiveStatus;
 
-    @ApiModelProperty(value = "收发货人姓名")
+    /**
+     * 收发货人姓名
+     *
+     * @mbggenerated
+     */
     private String name;
 
-    @ApiModelProperty(value = "收货人电话")
+    /**
+     * 收货人电话
+     *
+     * @mbggenerated
+     */
     private String phone;
 
-    @ApiModelProperty(value = "省/直辖市")
+    /**
+     * 省/直辖市
+     *
+     * @mbggenerated
+     */
     private String province;
 
-    @ApiModelProperty(value = "市")
+    /**
+     * 市
+     *
+     * @mbggenerated
+     */
     private String city;
 
-    @ApiModelProperty(value = "区")
+    /**
+     * 区
+     *
+     * @mbggenerated
+     */
     private String region;
 
-    @ApiModelProperty(value = "详细地址")
+    /**
+     * 详细地址
+     *
+     * @mbggenerated
+     */
     private String detailAddress;
 
     private static final long serialVersionUID = 1L;

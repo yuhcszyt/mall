@@ -1,25 +1,44 @@
 package com.macro.mall.model;
 
-import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
 import java.util.Date;
 
 public class UmsRole implements Serializable {
     private Long id;
 
-    @ApiModelProperty(value = "名称")
+    /**
+     * 名称
+     *
+     * @mbggenerated
+     */
     private String name;
 
-    @ApiModelProperty(value = "描述")
+    /**
+     * 描述
+     *
+     * @mbggenerated
+     */
     private String description;
 
-    @ApiModelProperty(value = "后台用户数量")
+    /**
+     * 后台用户数量
+     *
+     * @mbggenerated
+     */
     private Integer adminCount;
 
-    @ApiModelProperty(value = "创建时间")
+    /**
+     * 创建时间
+     *
+     * @mbggenerated
+     */
     private Date createTime;
 
-    @ApiModelProperty(value = "启用状态：0->禁用；1->启用")
+    /**
+     * 启用状态：0->禁用；1->启用
+     *
+     * @mbggenerated
+     */
     private Integer status;
 
     private Integer sort;

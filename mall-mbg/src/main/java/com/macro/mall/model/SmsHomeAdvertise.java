@@ -1,6 +1,5 @@
 package com.macro.mall.model;
 
-import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -9,7 +8,11 @@ public class SmsHomeAdvertise implements Serializable {
 
     private String name;
 
-    @ApiModelProperty(value = "轮播位置：0->PC首页轮播；1->app首页轮播")
+    /**
+     * 轮播位置：0->PC首页轮播；1->app首页轮播
+     *
+     * @mbggenerated
+     */
     private Integer type;
 
     private String pic;
@@ -18,22 +21,46 @@ public class SmsHomeAdvertise implements Serializable {
 
     private Date endTime;
 
-    @ApiModelProperty(value = "上下线状态：0->下线；1->上线")
+    /**
+     * 上下线状态：0->下线；1->上线
+     *
+     * @mbggenerated
+     */
     private Integer status;
 
-    @ApiModelProperty(value = "点击数")
+    /**
+     * 点击数
+     *
+     * @mbggenerated
+     */
     private Integer clickCount;
 
-    @ApiModelProperty(value = "下单数")
+    /**
+     * 下单数
+     *
+     * @mbggenerated
+     */
     private Integer orderCount;
 
-    @ApiModelProperty(value = "链接地址")
+    /**
+     * 链接地址
+     *
+     * @mbggenerated
+     */
     private String url;
 
-    @ApiModelProperty(value = "备注")
+    /**
+     * 备注
+     *
+     * @mbggenerated
+     */
     private String note;
 
-    @ApiModelProperty(value = "排序")
+    /**
+     * 排序
+     *
+     * @mbggenerated
+     */
     private Integer sort;
 
     private static final long serialVersionUID = 1L;

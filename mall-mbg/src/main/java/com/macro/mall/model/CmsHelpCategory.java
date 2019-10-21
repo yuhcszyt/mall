@@ -1,6 +1,5 @@
 package com.macro.mall.model;
 
-import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
 
 public class CmsHelpCategory implements Serializable {
@@ -8,10 +7,18 @@ public class CmsHelpCategory implements Serializable {
 
     private String name;
 
-    @ApiModelProperty(value = "分类图标")
+    /**
+     * 分类图标
+     *
+     * @mbggenerated
+     */
     private String icon;
 
-    @ApiModelProperty(value = "专题数量")
+    /**
+     * 专题数量
+     *
+     * @mbggenerated
+     */
     private Integer helpCount;
 
     private Integer showStatus;

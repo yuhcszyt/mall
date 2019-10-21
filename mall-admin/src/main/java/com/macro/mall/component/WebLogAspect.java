@@ -1,10 +1,8 @@
 package com.macro.mall.component;
 
-import cn.hutool.core.util.StrUtil;
-import cn.hutool.core.util.URLUtil;
-import cn.hutool.json.JSON;
-import cn.hutool.json.JSONUtil;
 import com.macro.mall.bo.WebLog;
+import com.macro.mall.util.JsonUtil;
+import com.macro.mall.util.RequestUtil;
 import io.swagger.annotations.ApiOperation;
 import net.logstash.logback.marker.Markers;
 import org.aspectj.lang.JoinPoint;
@@ -39,6 +37,7 @@ import java.util.Map;
 @Order(1)
 public class WebLogAspect {
     private static final Logger LOGGER = LoggerFactory.getLogger(WebLogAspect.class);
+    private ThreadLocal<Long> startTime = new ThreadLocal<>();
 
     @Pointcut("execution(public * com.macro.mall.controller.*.*(..))")
     public void webLog() {
@@ -46,6 +45,7 @@ public class WebLogAspect {
 
     @Before("webLog()")
     public void doBefore(JoinPoint joinPoint) throws Throwable {
+        startTime.set(System.currentTimeMillis());
     }
 
     @AfterReturning(value = "webLog()", returning = "ret")
@@ -54,11 +54,10 @@ public class WebLogAspect {
 
     @Around("webLog()")
     public Object doAround(ProceedingJoinPoint joinPoint) throws Throwable {
-        long startTime = System.currentTimeMillis();
         //获取当前请求对象
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         HttpServletRequest request = attributes.getRequest();
-        //记录请求信息(通过Logstash传入Elasticsearch)
+        //记录请求信息(通过logstash传入elasticsearch)
         WebLog webLog = new WebLog();
         Object result = joinPoint.proceed();
         Signature signature = joinPoint.getSignature();
@@ -69,14 +68,13 @@ public class WebLogAspect {
             webLog.setDescription(log.value());
         }
         long endTime = System.currentTimeMillis();
-        String urlStr = request.getRequestURL().toString();
-        webLog.setBasePath(StrUtil.removeSuffix(urlStr, URLUtil.url(urlStr).getPath()));
+        webLog.setBasePath(RequestUtil.getBasePath(request));
         webLog.setIp(request.getRemoteUser());
         webLog.setMethod(request.getMethod());
         webLog.setParameter(getParameter(method, joinPoint.getArgs()));
         webLog.setResult(result);
-        webLog.setSpendTime((int) (endTime - startTime));
-        webLog.setStartTime(startTime);
+        webLog.setSpendTime((int) (endTime - startTime.get()));
+        webLog.setStartTime(startTime.get());
         webLog.setUri(request.getRequestURI());
         webLog.setUrl(request.getRequestURL().toString());
         Map<String,Object> logMap = new HashMap<>();
@@ -85,8 +83,8 @@ public class WebLogAspect {
         logMap.put("parameter",webLog.getParameter());
         logMap.put("spendTime",webLog.getSpendTime());
         logMap.put("description",webLog.getDescription());
-//        LOGGER.info("{}", JSONUtil.parse(webLog));
-        LOGGER.info(Markers.appendEntries(logMap), JSONUtil.parse(webLog).toString());
+        //        LOGGER.info("{}", JsonUtil.objectToJson(webLog));
+        LOGGER.info(Markers.appendEntries(logMap),JsonUtil.objectToJson(webLog));
         return result;
     }
 
@@ -97,12 +95,10 @@ public class WebLogAspect {
         List<Object> argList = new ArrayList<>();
         Parameter[] parameters = method.getParameters();
         for (int i = 0; i < parameters.length; i++) {
-            //将RequestBody注解修饰的参数作为请求参数
             RequestBody requestBody = parameters[i].getAnnotation(RequestBody.class);
             if (requestBody != null) {
                 argList.add(args[i]);
             }
-            //将RequestParam注解修饰的参数作为请求参数
             RequestParam requestParam = parameters[i].getAnnotation(RequestParam.class);
             if (requestParam != null) {
                 Map<String, Object> map = new HashMap<>();

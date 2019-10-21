@@ -1,6 +1,6 @@
 package com.macro.mall.controller;
 
-import com.macro.mall.common.api.CommonResult;
+import com.macro.mall.dto.CommonResult;
 import com.macro.mall.model.CmsPrefrenceArea;
 import com.macro.mall.service.CmsPrefrenceAreaService;
 import io.swagger.annotations.Api;
@@ -27,8 +27,8 @@ public class CmsPrefrenceAreaController {
     @ApiOperation("获取所有商品优选")
     @RequestMapping(value = "/listAll", method = RequestMethod.GET)
     @ResponseBody
-    public CommonResult<List<CmsPrefrenceArea>> listAll() {
+    public Object listAll() {
         List<CmsPrefrenceArea> prefrenceAreaList = prefrenceAreaService.listAll();
-        return CommonResult.success(prefrenceAreaList);
+        return new CommonResult().success(prefrenceAreaList);
     }
 }

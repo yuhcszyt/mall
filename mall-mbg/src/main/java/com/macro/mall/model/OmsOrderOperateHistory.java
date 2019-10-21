@@ -1,25 +1,44 @@
 package com.macro.mall.model;
 
-import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
 import java.util.Date;
 
 public class OmsOrderOperateHistory implements Serializable {
     private Long id;
 
-    @ApiModelProperty(value = "订单id")
+    /**
+     * 订单id
+     *
+     * @mbggenerated
+     */
     private Long orderId;
 
-    @ApiModelProperty(value = "操作人：用户；系统；后台管理员")
+    /**
+     * 操作人：用户；系统；后台管理员
+     *
+     * @mbggenerated
+     */
     private String operateMan;
 
-    @ApiModelProperty(value = "操作时间")
+    /**
+     * 操作时间
+     *
+     * @mbggenerated
+     */
     private Date createTime;
 
-    @ApiModelProperty(value = "订单状态：0->待付款；1->待发货；2->已发货；3->已完成；4->已关闭；5->无效订单")
+    /**
+     * 订单状态：0->待付款；1->待发货；2->已发货；3->已完成；4->已关闭；5->无效订单
+     *
+     * @mbggenerated
+     */
     private Integer orderStatus;
 
-    @ApiModelProperty(value = "备注")
+    /**
+     * 备注
+     *
+     * @mbggenerated
+     */
     private String note;
 
     private static final long serialVersionUID = 1L;
