@@ -5,16 +5,18 @@ import com.macro.mall.model.OmsOrderSetting;
 import com.macro.mall.service.OmsOrderSettingService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 /**
- * 订单设置Controller
+ * 订单设置管理Controller
  * Created by macro on 2018/10/16.
  */
 @Controller
-@Api(tags = "OmsOrderSettingController", description = "订单设置管理")
+@Api(tags = "OmsOrderSettingController")
+@Tag(name = "OmsOrderSettingController", description = "订单设置管理")
 @RequestMapping("/orderSetting")
 public class OmsOrderSettingController {
     @Autowired

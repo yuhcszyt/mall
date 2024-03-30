@@ -6,6 +6,7 @@ import com.macro.mall.model.SmsHomeRecommendSubject;
 import com.macro.mall.service.SmsHomeRecommendSubjectService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -17,7 +18,8 @@ import java.util.List;
  * Created by macro on 2018/11/6.
  */
 @Controller
-@Api(tags = "SmsHomeRecommendSubjectController", description = "首页专题推荐管理")
+@Api(tags = "SmsHomeRecommendSubjectController")
+@Tag(name = "SmsHomeRecommendSubjectController", description = "首页专题推荐管理")
 @RequestMapping("/home/recommendSubject")
 public class SmsHomeRecommendSubjectController {
     @Autowired
@@ -26,8 +28,8 @@ public class SmsHomeRecommendSubjectController {
     @ApiOperation("添加首页推荐专题")
     @RequestMapping(value = "/create", method = RequestMethod.POST)
     @ResponseBody
-    public CommonResult create(@RequestBody List<SmsHomeRecommendSubject> homeBrandList) {
-        int count = recommendSubjectService.create(homeBrandList);
+    public CommonResult create(@RequestBody List<SmsHomeRecommendSubject> homeRecommendSubjectList) {
+        int count = recommendSubjectService.create(homeRecommendSubjectList);
         if (count > 0) {
             return CommonResult.success(count);
         }
@@ -74,7 +76,7 @@ public class SmsHomeRecommendSubjectController {
                                                                   @RequestParam(value = "recommendStatus", required = false) Integer recommendStatus,
                                                                   @RequestParam(value = "pageSize", defaultValue = "5") Integer pageSize,
                                                                   @RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum) {
-        List<SmsHomeRecommendSubject> homeBrandList = recommendSubjectService.list(subjectName, recommendStatus, pageSize, pageNum);
-        return CommonResult.success(CommonPage.restPage(homeBrandList));
+        List<SmsHomeRecommendSubject> homeRecommendSubjectList = recommendSubjectService.list(subjectName, recommendStatus, pageSize, pageNum);
+        return CommonResult.success(CommonPage.restPage(homeRecommendSubjectList));
     }
 }

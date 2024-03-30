@@ -10,9 +10,9 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -22,7 +22,8 @@ import java.util.List;
  * Created by macro on 2018/4/26.
  */
 @Controller
-@Api(tags = "PmsProductAttributeController", description = "商品属性管理")
+@Api(tags = "PmsProductAttributeController")
+@Tag(name = "PmsProductAttributeController", description = "商品属性管理")
 @RequestMapping("/productAttribute")
 public class PmsProductAttributeController {
     @Autowired
@@ -43,7 +44,7 @@ public class PmsProductAttributeController {
     @ApiOperation("添加商品属性信息")
     @RequestMapping(value = "/create", method = RequestMethod.POST)
     @ResponseBody
-    public CommonResult create(@RequestBody PmsProductAttributeParam productAttributeParam, BindingResult bindingResult) {
+    public CommonResult create(@RequestBody PmsProductAttributeParam productAttributeParam) {
         int count = productAttributeService.create(productAttributeParam);
         if (count > 0) {
             return CommonResult.success(count);
@@ -55,7 +56,7 @@ public class PmsProductAttributeController {
     @ApiOperation("修改商品属性信息")
     @RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
     @ResponseBody
-    public CommonResult update(@PathVariable Long id, @RequestBody PmsProductAttributeParam productAttributeParam, BindingResult bindingResult) {
+    public CommonResult update(@PathVariable Long id, @RequestBody PmsProductAttributeParam productAttributeParam) {
         int count = productAttributeService.update(id, productAttributeParam);
         if (count > 0) {
             return CommonResult.success(count);

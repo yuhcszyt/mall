@@ -1,6 +1,11 @@
 spring:
+  application:
+    name: mall-search
   profiles:
     active: dev #默认为开发环境
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
 
 server:
   port: 8081
@@ -9,11 +14,6 @@ mybatis:
   mapper-locations:
     - classpath:dao/*.xml
     - classpath*:com/**/mapper/*.xml
-
-logging:
-  level:
-    root: info
-    com.macro.mall: debug
 
 
 
